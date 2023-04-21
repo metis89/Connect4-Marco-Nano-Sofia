@@ -34,7 +34,7 @@ const generateBoardLogic = (rows, columns) => {
 };
 
 const placeTokenOnBoard = (row, column, currentBoard, playerOne, playerTwo) => {
-  let columnToPlaceToken = findTokensInColumn(currentBoard, column);
+  let columnToPlaceToken = findSelectedInColumn(currentBoard, column);
 
   for (let col = columnToPlaceToken.length - 1; col >= 0; col--) {
     if (columnToPlaceToken[col].matched === false) {
@@ -58,7 +58,7 @@ const placeTokenOnBoard = (row, column, currentBoard, playerOne, playerTwo) => {
   }
 };
 
-const findTokensInColumn = (currentBoard, column) => {
+const findSelectedInColumn = (currentBoard, column) => {
   let selectedColumn = [];
 
   for (let row = 0; row < currentBoard.length; row++) {
