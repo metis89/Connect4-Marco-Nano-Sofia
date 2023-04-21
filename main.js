@@ -46,13 +46,13 @@ const placeTokenOnBoard = (row, column, currentBoard, playerOne, playerTwo) => {
         tokenToPlace.classList.add("red-player");
         playerOne = false;
         playerTwo = true;
-        break;
+        return;
       }
       if (playerTwo === true) {
         tokenToPlace.classList.add("yellow-player");
         playerTwo = false;
         playerOne = true;
-        break;
+        return;
       }
     }
   }
