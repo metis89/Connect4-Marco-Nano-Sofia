@@ -6,7 +6,12 @@ const generateGamingBoard = (rows, columns) => {
     const rowTable = document.querySelector(`.table-row-${row}`);
 
     for (let column = 1; column <= columns; column++) {
-      rowTable.innerHTML += `<div class="col row-${row}-col-${column}"><button id="${row} "value="${column}" class="token-button"></button></div>`;
+      rowTable.innerHTML += `<div class="col row-${row}-col-${column}"></div>`;
+      const colPart = document.querySelector(`.row-${row}-col-${column}`);
+
+      for (let button = 0; button < 1; button++) {
+        colPart.innerHTML += `<button id="${row} "value="${column}" class="token-button"></button>`;
+      }
     }
   }
 };
@@ -89,7 +94,6 @@ const startGame = () => {
   let rows = 6;
   let columns = 7;
   let currentBoard = generateBoardLogic(rows, columns);
-  console.log(currentBoard);
   generateGamingBoard(rows, columns);
   registerEventListeners(currentBoard);
 };
