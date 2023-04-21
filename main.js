@@ -54,7 +54,7 @@ const placeTokenOnBoard = (row, column, currentBoard, playerOne, playerTwo) => {
 };
 
 const findTokensInColumn = (currentBoard, column) => {
-  let result = [];
+  let selectedColumn = [];
 
   for (let row = 0; row < currentBoard.length; row++) {
     let rowArray = currentBoard[row];
@@ -63,11 +63,11 @@ const findTokensInColumn = (currentBoard, column) => {
       let columnCoordinate = rowArray[col];
 
       if (columnCoordinate.colLocation === column) {
-        result.push(columnCoordinate);
+        selectedColumn.push(columnCoordinate);
       }
     }
   }
-  return result;
+  return selectedColumn;
 };
 
 const registerEventListeners = (currentBoard, columns, rows) => {
